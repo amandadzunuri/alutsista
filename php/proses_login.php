@@ -14,7 +14,7 @@ $result = $conn->query($query);
 if ($result->num_rows > 0) {
     // Login berhasil
     $_SESSION['username'] = $username;
-    echo "<script>alert('Login successful. Welcome, $username!'); window.location.href='../index.html';</script>";
+    echo "<script>alert('Login successful. Welcome, $username!'); window.location.href='../index.php';</script>";
 } else {
     // Login gagal
     echo "Login failed. Please check your username and password.";

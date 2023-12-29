@@ -35,9 +35,26 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="./aset/aset.html" style="padding-right: 71px;">Aset</a>
               </li>
-              <li class="nav-item">
+              <!-- 
+                <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="./login/login.html" style="padding-right: 71px;">Login</a>
               </li>
+              -->
+
+              < ?php
+                // Periksa apakah pengguna sudah login
+                session_start();
+                if(isset($_SESSION['username'])){
+                    echo '<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./tambah/tambah.html" style="padding-right: 71px;">Tambah Data</a>
+                          </li>';
+                } else {
+                    echo '<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../login/login.html" style="padding-right: 71px;">Login</a>
+                          </li>';
+                }
+              ?>
+              
             </ul>
             <form class="d-flex">
                 <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"

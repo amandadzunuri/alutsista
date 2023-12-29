@@ -1,3 +1,11 @@
+<?php
+include("../php/config.php");
+$qkendaraan = "select * from kendaraan";
+$data_kendaraan = $conn->query($qkendaraan);
+$qsenjata = "select * from senjata";
+$data_senjata = $conn->query($qsenjata);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,17 +40,29 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../index.html" style="padding-right: 71px;">Home</a>
+                  <a class="nav-link active" aria-current="page" href="../index.php" style="padding-right: 71px;">Home</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../about/about.html" style="padding-right: 71px;">About Us</a>
+                  <a class="nav-link active" aria-current="page" href="../about/about.php" style="padding-right: 71px;">About Us</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="aset.html" style="padding-right: 71px;">Aset</a>
+                  <a class="nav-link active" aria-current="page" href="aset.php" style="padding-right: 71px;">Aset</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../login/login.html" style="padding-right: 71px;">Login</a>
-                </li>
+                <?php
+                // Periksa apakah pengguna sudah login
+                session_start();
+                if(isset($_SESSION['username'])){
+                    echo '
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../tambah/jenis_alutsista.html" style="padding-right: 71px;">Tambah Alutsista</a>
+                    </li>';
+                } else {
+                    echo '
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../login/login.html" style="padding-right: 71px;">Login</a>
+                    </li>';
+                    }
+                ?>
               </ul>
               <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
@@ -51,47 +71,40 @@
           </div>
         </div>
     </nav>
-
-    <div class="row row-cols-1 row-cols-md-5  p-4">
-        <div class="col">
-            <img src="../img/aset1.png" class="card-img-top" alt="...">
+    
+    <h4 class="fw-bold mt-4 ms-4">Data Kendaraan</h4>
+    <div class="row row-cols-1 row-cols-md-4">
+    <?php
+        foreach($data_kendaraan as $index => $value){
+    ?>
+        <div class="col ms-4">
+            <img src="<?php echo $value['gambar']; ?>" class="card-img-top w-100" alt="..." style="height: 13.9375rem; border-radius: 0.9375rem;">
             <div class="mt-4">
-                <h5 class="card-text fw-bold">Your first line of text</h5>
-                <p class="card-text">Your second line of text</p>
+                <h5 class="card-text fw-bold"><?php echo $value['nama']; ?></h5>
+                <p class="card-text"><?php echo $value['model']; ?></p>
             </div>
         </div>
-        <div class="col">
-            <img src="../img/aset2.png" class="card-img-top" alt="...">
-            <div class="mt-4">
-                <h5 class="card-text fw-bold">Your first line of text</h5>
-                <p class="card-text">Your second line of text</p>
-            </div>
-        </div>
-        <div class="col">
-            <img src="../img/aset3.png" class="card-img-top" alt="...">
-            <div class="mt-4">
-                <h5 class="card-text fw-bold">Your first line of text</h5>
-                <p class="card-text">Your second line of text</p>
-            </div>
-        </div>
-        <div class="col">
-            <img src="../img/aset4.png" class="card-img-top" alt="...">
-            <div class="mt-4">
-                <h5 class="card-text fw-bold">Your first line of text</h5>
-                <p class="card-text">Your second line of text</p>
-            </div>
-        </div>
-        <div class="col">
-            <img src="../img/aset5.png" class="card-img-top" alt="...">
-            <div class="mt-4">
-                <h5 class="card-text fw-bold">Your first line of text</h5>
-                <p class="card-text">Your second line of text</p>
-            </div>                
-        </div>
+    <?php
+        }
+    ?>
     </div>
     
-
-
+    <h4 class="fw-bold mt-4 ms-4">Data Senjata</h4>
+    <div class="row row-cols-1 row-cols-md-4">
+    <?php
+        foreach($data_senjata as $index => $value){
+    ?>
+        <div class="col ms-4">
+            <img src="<?php echo $value['gambar']; ?>" class="card-img-top w-100" alt="..." style="height: 13.9375rem; border-radius: 0.9375rem;">
+            <div class="mt-4">
+                <h5 class="card-text fw-bold"><?php echo $value['nama']; ?></h5>
+                <p class="card-text"><?php echo $value['model']; ?></p>
+            </div>
+        </div>
+    <?php
+        }
+    ?>
+    </div>
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
