@@ -45,15 +45,16 @@
                           </li>';
                 } else {
                     echo '<li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="../login/login.html" style="padding-right: 71px;">Login</a>
+                            <a class="nav-link active" aria-current="page" href="./login/login.html" style="padding-right: 71px;">Login</a>
                           </li>';
                 }
               ?>
               
             </ul>
-            <form class="d-flex">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+            <form class="d-flex" method="GET" action="search_results.php">
+                <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search"
                     style="border-radius: 30px; background: none; border-color: #FFFAE2; color: #FFFAE2;">
+                <button class="btn btn-outline-light" type="submit">Search</button>
             </form>
         </div>
       </div>

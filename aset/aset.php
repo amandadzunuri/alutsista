@@ -73,16 +73,18 @@ $data_senjata = $conn->query($qsenjata);
     </nav>
     
     <h4 class="fw-bold mt-4 ms-4">Data Kendaraan</h4>
-    <div class="row row-cols-1 row-cols-md-4">
+    <div class="row row-cols-1 row-cols-md-4  ms-2">
     <?php
         foreach($data_kendaraan as $index => $value){
     ?>
-        <div class="col ms-4">
+        <div class="col">
+            <a href="../detail/detail_kendaraan.php?kode=<?php echo $value['kode']; ?>">
             <img src="<?php echo $value['gambar']; ?>" class="card-img-top w-100" alt="..." style="height: 13.9375rem; border-radius: 0.9375rem;">
             <div class="mt-4">
                 <h5 class="card-text fw-bold"><?php echo $value['nama']; ?></h5>
                 <p class="card-text"><?php echo $value['model']; ?></p>
             </div>
+            </a>
         </div>
     <?php
         }
@@ -90,16 +92,18 @@ $data_senjata = $conn->query($qsenjata);
     </div>
     
     <h4 class="fw-bold mt-4 ms-4">Data Senjata</h4>
-    <div class="row row-cols-1 row-cols-md-4">
+    <div class="row row-cols-1 row-cols-md-4 ms-2">
     <?php
         foreach($data_senjata as $index => $value){
     ?>
-        <div class="col ms-4">
+        <div class="col">
+            <a href="../detail/detail_senjata.php?kode=<?php echo $value['kode']; ?>">
             <img src="<?php echo $value['gambar']; ?>" class="card-img-top w-100" alt="..." style="height: 13.9375rem; border-radius: 0.9375rem;">
             <div class="mt-4">
                 <h5 class="card-text fw-bold"><?php echo $value['nama']; ?></h5>
                 <p class="card-text"><?php echo $value['model']; ?></p>
             </div>
+            </a>
         </div>
     <?php
         }
