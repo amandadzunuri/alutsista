@@ -18,7 +18,7 @@
   <body style="background-color: #FFFAE2;  font-family: 'Poppins'">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001524;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="padding: 12px;"><img src="../img/logo.png" alt="" width="50"
+            <a class="navbar-brand" href="../index.php" style="padding: 12px;"><img src="../img/logo.png" alt="" width="50"
                     height="50"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,10 +51,11 @@
                 }
                 ?>
               </ul>
+              <!--
               <form class="d-flex">
                   <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
                       style="border-radius: 30px; background: none; border-color: #FFFAE2; color: #FFFAE2;">
-              </form>
+              </form>-->
           </div>
         </div>
     </nav>

@@ -1,28 +1,23 @@
 <?php
-    include "config.php";
+    include ("../php/config.php");
 
-    if(isset($_POST['kode'])){
+    $nama_alutsista = $_POST["nama"];
+    $kode_identitas = $_POST["kode"];
+    $merk = $_POST["merk"];
+    $model = $_POST["model"];
+    $jenis_kendaraan = $_POST["jenis"];
+    $berat_tempur = $_POST["berat"];
+    $ukuran_kendaraan = $_POST["ukuran"];
+    $kapasitas_awak = $_POST["awak"];
+    $persenjataan_utama = $_POST["senjata_utama"];
+    $kecepatan_maksimal = $_POST["kecepatan"];
+    $sistem_navigasi = $_POST["sistem_navigasi"];
+    $tanggal_pembelian = $_POST["tanggal_pembelian"];
+    $lokasi_saat_ini = $_POST["lokasi"];
+    $status_alutsista = $_POST["status"];
+    $tanggal_perbaikan = $_POST["tanggal_perbaikan"];
+    $jenis_perbaikan = $_POST["jenis_perbaikan"];
 
-        // mengambil data dari form
-        $nama_alutsista = $_POST["nama"];
-        $kode_identitas = $_POST["kode"];
-        $merk = $_POST["merk"];
-        $model = $_POST["model"];
-
-        $jenis_senjata = $_POST["jenis"];
-        $ukuran_kaliber = $_POST["kaliber"];
-        $kapasitas_megazen = $_POST["kapasitas"];
-        $panjang_laras = $_POST["panjang"];
-        $bahan_konstruksi = $_POST["bahan"];
-        $bobot_senjata = $_POST["bobot"];
-        $kecepatan_peluru = $_POST["kecepatan"];
-
-        $tanggal_pembelian = $_POST["tanggal_pembelian"];
-        $lokasi_saat_ini = $_POST["lokasi"];
-        $status_alutsista = $_POST["status"];
-        $tanggal_perbaikan = $_POST["tanggal_perbaikan"];
-        $jenis_perbaikan = $_POST["jenis_perbaikan"];
-       
         //periksa apakah filefoto diunggah
         $target_dir = "../uploads/";
         $target_file = $target_dir . basename($_FILES["gambar"]["name"]);
@@ -71,13 +66,13 @@
         }
 
         // query tambah data kendaraan
-        $sql = "INSERT INTO senjata (nama, kode, merk, model, jenis, kaliber, kapasitas, panjang, bahan, bobot, kecepatan, tanggal_pembelian, lokasi, status, tanggal_perbaikan, jenis_perbaikan, gambar) 
-        VALUES ('$nama_alutsista', '$kode_identitas', '$merk', '$model', '$jenis_senjata', '$ukuran_kaliber', '$kapasitas_megazen', '$panjang_laras', '$bahan_konstruksi', '$bobot_senjata', '$kecepatan_peluru', '$tanggal_pembelian', '$lokasi_saat_ini', '$status_alutsista', '$tanggal_perbaikan', '$jenis_perbaikan', '$target_file')";
+        $sql = "INSERT INTO kendaraan (nama, kode, merk, model, jenis, berat, ukuran, awak, senjata_utama, kecepatan, sistem_navigasi, tanggal_pembelian, lokasi, status, tanggal_perbaikan, jenis_perbaikan, gambar) 
+        VALUES ('$nama_alutsista', '$kode_identitas', '$merk', '$model', '$jenis_kendaraan', '$berat_tempur', '$ukuran_kendaraan', '$kapasitas_awak', '$persenjataan_utama', '$kecepatan_maksimal', '$sistem_navigasi', '$tanggal_pembelian', '$lokasi_saat_ini', '$status_alutsista', '$tanggal_perbaikan', '$jenis_perbaikan', '$target_file')";
 
         // kondisi jika sukses menambahkan data
         if ($conn->query($sql) === TRUE) {
             $conn->close();
-            header("location: ../aset/aset.php");
+            echo "<script>alert('Added data successful'); window.location.href='../aset/aset.php';</script>";
         exit();
         } 
         // kondisi jika gagal menambahkan data
@@ -86,5 +81,5 @@
             header("location: ../aset/aset.php");
         exit();
         }
-    }
+
 ?>

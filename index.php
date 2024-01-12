@@ -49,13 +49,13 @@
                           </li>';
                 }
               ?>
-              
             </ul>
+            <!--
             <form class="d-flex" method="GET" action="../php/search_results.php">
                 <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search"
                     style="border-radius: 30px; background: none; border-color: #FFFAE2; color: #FFFAE2;">
                 <button class="btn btn-outline-light" type="submit" name="query">Search</button>
-            </form>
+            </form>-->
         </div>
       </div>
   </nav>

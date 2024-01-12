@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("config.php");
+include("../php/config.php");
 
 // Mendapatkan data dari form login
 $username = $_POST['username'];

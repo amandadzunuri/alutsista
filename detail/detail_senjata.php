@@ -50,15 +50,11 @@ if (isset($_GET['kode'])) {
             <h3 style="font-weight: bold;"><?php echo $detail['nama']; ?></h3>
               <p style="margin-top: 1rem;"><?php echo $detail['kode']; ?></p>
               <p style="margin-top: 1rem;"><?php echo $detail['model']; ?></p>
-              <!--<a href="../edit/edit.php?kode=<?php echo $detail['kode']; ?>" class="btn btn-primary" style="border-radius: 0.3125rem; background: #1F9B00; width: 12.5rem;">Edit Data</a>
-              <a href="../php/hapus_kendaraan.php?kode=<?php echo $detail['kode']; ?>" class="btn btn-primary" style="border-radius: 0.3125rem; background: #EF0000; width: 12.5rem;" data-bs-target="#hapusModal">Hapus Data</a>
-              <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="border-radius: 0.3125rem; background: #EF0000; width: 12.5rem;">
-                Hapus Data
-              </button>-->
+   
 
               <div class="d-grid gap-4 d-md-block">
-                <a href="../edit/edit.php?kode=<?php echo $detail['kode']; ?>" class="btn btn-primary" style="border-radius: 0.3125rem; background: #1F9B00; width: 12.5rem;">Edit Data</a>
-                <a href="../php/hapus_senjata.php?kode=<?php echo $detail['kode']; ?>" class="btn btn-primary" style="border-radius: 0.3125rem; background: #EF0000; width: 12.5rem;">Hapus Data</a>
+                <a href="../edit/edit_senjata.php?kode=<?php echo $detail['kode']; ?>" class="btn btn-primary" style="border-radius: 0.3125rem; background: #1F9B00; width: 12.5rem;">Edit Data</a>
+                <a href="../hapus/hapus_senjata.php?kode=<?php echo $detail['kode']; ?>" class="btn btn-primary" style="border-radius: 0.3125rem; background: #EF0000; width: 12.5rem;">Hapus Data</a>
               </div>
 
               <!-- Modal -->
@@ -80,11 +76,7 @@ if (isset($_GET['kode'])) {
                 </div>
               </div>
             </div>
-
           </div>
-
-         
-
   
           <div class="row">
             <div class="col-6 mt-4" style="font-family: 'Poppins'">

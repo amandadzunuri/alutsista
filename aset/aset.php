@@ -49,8 +49,7 @@ $data_senjata = $conn->query($qsenjata);
 <body style="background-color: #FFFAE2; font-family: 'Poppins';" >
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001524;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="padding: 12px;"><img src="../img/logo.png" alt="" width="50"
-                    height="50"></a>
+            <a class="navbar-brand" href="../index.php" style="padding: 12px;"><img src="../img/logo.png" alt="" width="50" height="50"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -120,7 +119,7 @@ $data_senjata = $conn->query($qsenjata);
     <?php
         foreach($data_senjata as $index => $value){
     ?>
-        <div class="col"> 
+        <div class="col mt-4"> 
             <a href="../detail/detail_senjata.php?kode=<?php echo $value['kode']; ?>" class="text-decoration-none text-dark">
             <img src="<?php echo $value['gambar']; ?>" class="card-img-top w-100" alt="..." style="height: 13.9375rem; border-radius: 0.9375rem;">
             <div class="mt-4">

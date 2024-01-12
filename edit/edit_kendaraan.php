@@ -68,7 +68,7 @@ if (isset($_GET['kode'])) {
         }
     </style>
 
-    <title>Tambah Alutsista</title>
+    <title>Edit Alutsista</title>
 </head>
 <body >
 
@@ -77,7 +77,7 @@ if (isset($_GET['kode'])) {
             <h3 style="color: #ffffff; text-align: center; padding-top: 16px; font-size: 3rem; ">EDIT ALUTSISTA</h3>
         </div>
 
-        <form action ="../php/simpan_kendaraan.php" method="POST" enctype="multipart/form-data" class="form-container">      
+        <form action ="../update/update_kendaraan.php" method="POST" enctype="multipart/form-data" class="form-container">      
             <div class="mt-4" style="text-align: left;">
                 <h5>Informasi Umum*</h5>
                 <div class="form mt-2 w-100" >
