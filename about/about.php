@@ -41,7 +41,7 @@
                 if(isset($_SESSION['username'])){
                   echo '
                   <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="./tambah/jenis_alutsista.html" style="padding-right: 71px;">Tambah Alutsista</a>
+                    <a class="nav-link active" aria-current="page" href="../tambah/jenis_alutsista.html" style="padding-right: 71px;">Tambah Alutsista</a>
                   </li>';
                 } else {
                   echo '

@@ -1,8 +1,26 @@
 <?php
 include("../php/config.php");
-$qkendaraan = "select * from kendaraan";
+//$qkendaraan = "select * from kendaraan";
+//$data_kendaraan = $conn->query($qkendaraan);
+//$qsenjata = "select * from senjata";
+//$data_senjata = $conn->query($qsenjata);
+
+// Initialize variables for search
+$search_query = "";
+$where_condition = "";
+
+// Check if a search query is submitted
+if(isset($_GET['search'])){
+    $search_query = $_GET['search'];
+    $where_condition = " WHERE nama LIKE '%$search_query%' OR model LIKE '%$search_query%'";
+}
+
+// Query for Kendaraan
+$qkendaraan = "SELECT * FROM kendaraan" . $where_condition;
 $data_kendaraan = $conn->query($qkendaraan);
-$qsenjata = "select * from senjata";
+
+// Query for Senjata
+$qsenjata = "SELECT * FROM senjata" . $where_condition;
 $data_senjata = $conn->query($qsenjata);
 ?>
 
@@ -64,13 +82,19 @@ $data_senjata = $conn->query($qsenjata);
                     }
                 ?>
               </ul>
-              <form class="d-flex">
-                  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
-                      style="border-radius: 30px; background: none; border-color: #FFFAE2; color: #FFFAE2;">
-              </form>
           </div>
         </div>
     </nav>
+
+    <!-- Search box -->
+    <div class="container mt-4">
+        <form action="aset.php" method="get">
+            <div class="input-group mb-3 w-100">
+                <input type="text" class="form-control" placeholder="Search..." name="search" value="<?php echo $search_query; ?>">
+                <button class="btn btn-outline-secondary" type="submit">Search</button>
+            </div>
+        </form>
+    </div>
     
     <h4 class="fw-bold mt-4 ms-4">Data Kendaraan</h4>
     <div class="row row-cols-1 row-cols-md-4  ms-2">
@@ -78,7 +102,7 @@ $data_senjata = $conn->query($qsenjata);
         foreach($data_kendaraan as $index => $value){
     ?>
         <div class="col">
-            <a href="../detail/detail_kendaraan.php?kode=<?php echo $value['kode']; ?>">
+            <a href="../detail/detail_kendaraan.php?kode=<?php echo $value['kode']; ?>" class="text-decoration-none text-dark">
             <img src="<?php echo $value['gambar']; ?>" class="card-img-top w-100" alt="..." style="height: 13.9375rem; border-radius: 0.9375rem;">
             <div class="mt-4">
                 <h5 class="card-text fw-bold"><?php echo $value['nama']; ?></h5>
@@ -96,8 +120,8 @@ $data_senjata = $conn->query($qsenjata);
     <?php
         foreach($data_senjata as $index => $value){
     ?>
-        <div class="col">
-            <a href="../detail/detail_senjata.php?kode=<?php echo $value['kode']; ?>">
+        <div class="col"> 
+            <a href="../detail/detail_senjata.php?kode=<?php echo $value['kode']; ?>" class="text-decoration-none text-dark">
             <img src="<?php echo $value['gambar']; ?>" class="card-img-top w-100" alt="..." style="height: 13.9375rem; border-radius: 0.9375rem;">
             <div class="mt-4">
                 <h5 class="card-text fw-bold"><?php echo $value['nama']; ?></h5>
