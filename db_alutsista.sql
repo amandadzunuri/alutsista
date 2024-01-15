@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 15, 2024 at 06:53 AM
+-- Generation Time: Jan 15, 2024 at 11:41 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -20,24 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_alutsista`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tb_admin`
---
-
-CREATE TABLE `tb_admin` (
-  `username` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `tb_admin`
---
-
-INSERT INTO `tb_admin` (`username`, `password`) VALUES
-('admin', 'amancantik');
 
 -- --------------------------------------------------------
 
@@ -74,8 +56,7 @@ INSERT INTO `tb_kendaraan` (`nama`, `kode`, `merk`, `model`, `jenis`, `berat`, `
 ('Kapal Selam Kelas Virginia', 'KS-003', 'General Dynamics Electric Boat', 'SSN-774 ', 'Kapal Selam Serang', '7.800 ton', '115m x 10m x 7m', '135 orang', 'Torpedo Anti-Kapal, Rudal Pemandu, Sistem Rudal Vertical Launch System (VLS)', '25+ knot', 'Sonar Aktif dan Pasif, Sistem Pemetaan Bawah Air, Sistem Navigasi Inersia', '2017-02-10', 'Markas Besar Angkatan Laut', 'Aktif', '2022-08-23', 'Penggantian suku cadang sistem transmisi', '../uploads/Kapal Selam Kelas Virginia.jpeg'),
 ('Pesawat Tempur Sukhoi Su-35', 'PT-002', 'Sukhoi', 'Su-35S', 'Pesawat Tempur Serang', '34 ton', '21.9m x 15.3m x 5.9m', '1-2 orang (pilot)', 'Meriam GSh-30-1 30mm, Rudal Udara-ke-Udara R-77, R-27, Rudal Udara-ke-Darat Kh-59, Kh-31', 'Mach 2.25 (2.400 km/jam)', 'Radar PESA (Passive Electronically Scanned Array), Sistem Navigasi Inersia (INS), GPS/GLONASS', '2022-04-06', 'Markas Besar Angkatan Udara', 'Aktif', '2023-02-23', 'Perbaikan sistem pendingin', '../uploads/Pesawat Tempur Sukhoi Su-35.jpeg'),
 ('Pesawat Tempur Multifungsi F-35 Lightning II', 'PT-35', 'Lockheed Martin', 'F-35A', 'Pesawat Tempur', '13 ton', '10.7m x 13.1m x 4.3m', '1 orang (pilot)', 'Meriam GAU-22/A 25mm cannon', 'Mach 1.6 (1,960 km/jam)', 'Sistem navigasi inersia terpadu, GPS, radar pencarian dan pelacakan', '2021-05-15', 'Markas Besar Angkatan Udara', 'Aktif', '2023-05-01', 'Pemeliharaan Rutin - Penggantian Suku Cadang yang Aus', '../uploads/Pesawat Tempur Multifungsi F-35 Lightning II.jpg'),
-('Tank Tempur Main Battle MBT-2000', 'TMBT-001', 'Norinco', 'MBT-2000', 'Kendaraan Tempur Darat', '48 ton', '7.2m x 3.4m x 2.2m', '3 orang (kru)', 'Meriam Gl 125mm', '70 km/jam di jalan 45 km/jam di tanah tidak beraspal', 'GPS Terintegrasi', '2019-05-15', 'Markas Besar Angkatan Darat', 'Aktif', '2022-12-12', 'Perbaikan Kerusakan Struktural', '../uploads/Tank Tempur Main Battle MBT-2000.jpg'),
-('Tank Leopard 2A7', 'TNK-002', 'Krauss-Maffei Wegmann (KMW)', 'Leopard 2A7', 'Tank Tempur Utama', '62 ton', '10.97m x 3.75m x 3m', '4 orang', 'Meriam L55 120mm smoothbore, dengan sistem pemuat otomatis', '70 km/jam di jalan, 45 km/jam di medan berat', 'Sistem Navigasi Inersia, GPS, Sistem Pengamatan dan Penargetan Termal', '2021-07-20', 'Markas Besar Angkatan Darat', 'Aktif', '2022-09-15', 'Perbaikan Keamanan - Pembaruan Sistem Proteksi', '../uploads/Tank Leopard 2A7.jpg');
+('Tank Tempur Main Battle MBT-2000', 'TMBT-001', 'Norinco', 'MBT-2000', 'Kendaraan Tempur Darat', '48 ton', '7.2m x 3.4m x 2.2m', '3 orang (kru)', 'Meriam Gl 125mm', '70 km/jam di jalan 45 km/jam di tanah tidak beraspal', 'GPS Terintegrasi', '2019-05-15', 'Markas Besar Angkatan Darat', 'Aktif', '2022-12-12', 'Perbaikan Kerusakan Struktural', '../uploads/Tank Tempur Main Battle MBT-2000.jpg');
 
 -- --------------------------------------------------------
 
@@ -108,12 +89,36 @@ CREATE TABLE `tb_senjata` (
 --
 
 INSERT INTO `tb_senjata` (`nama`, `kode`, `merk`, `model`, `jenis`, `kaliber`, `kapasitas`, `panjang`, `bahan`, `bobot`, `kecepatan`, `tanggal_pembelian`, `lokasi`, `status`, `tanggal_perbaikan`, `jenis_perbaikan`, `gambar`) VALUES
-('Carbine-X MK-IV', 'CX-001', 'TechArm Solutions', 'MK-IV', 'Karabin Serbu', '7.62x39mm', '30 peluru', '16 inci', 'Campuran Baja Kekuatan Tinggi dan Polimer', '3.8 kg', '800 meter/detik', '2018-06-02', 'Markas Besar Angkatan Laut', 'Aktif', '2022-06-05', 'Overhaul sistem operasional dan kalibrasi ulang', '../uploads/Carbine-X MK-IV.jpeg'),
+('Carbine-X MK-IV S', 'CX-001', 'TechArm Solutions', 'MK-IV', 'Karabin Serbu', '7.62x39mm', '30 peluru', '16 inci', 'Campuran Baja Kekuatan Tinggi dan Polimer', '3.8 kg', '800 meter/detik', '2018-06-02', 'Markas Besar Angkatan Laut', 'Aktif', '2022-06-05', 'Overhaul sistem operasional dan kalibrasi ulang', '../uploads/Carbine-X MK-IV.jpeg'),
 ('Pistol Serbu FN SCAR', 'PS-001', 'FN Herstal', 'FN SCAR-L (Light)', 'Pistol Serbu', '12mm', '30 peluru', '365mm', 'Baja ', '3.3 kg', '900 meter/detik', '2022-10-15', 'Markas Besar Angkatan Udara', 'Aktif', '2023-02-23', ' Penggantian komponen pemicu yang aus', '../uploads/FN-SCAR-L.jpg'),
-('Pistol Seri XZ-2000', 'PTL-4567', 'TechArm Solutions', 'Defender Pro', 'Semi-otomatis', '10mm', '15 peluru', '115mm', 'Logam ', '800 gram', '350 meter/detik', '2021-07-17', 'Markas Besar Angkatan Udara', 'Aktif', '2023-05-01', 'Penggantian komponen pemicu', '../uploads/Pistol Seri XZ-2000 Defender Pro.jpg'),
 ('Pistol M9', 'PX-12345', 'Beretta', 'Beretta M9', 'Semi-otomatis', '9mm ', '15 peluru', '125 mm', 'Baja', '964 gram ', '350 meter/detik', '2019-02-15', 'Markas Besar Angkatan Darat', 'Aktif', '2022-12-12', 'Pembersihan dan pengecekan umum', '../uploads/Beretta M9.jpg'),
+('Pistol P226', 'PX-54321', 'Sig Sauer ', 'P226', 'Semi-otomatis', '15mm', '12 peluru', '112 mm', 'Stainless steel', '900 gram', '370 meter/detik', '2020-05-10', 'Gudang Amunisi Angkatan Laut', 'Aktif', '2024-01-15', 'Pemeriksaan dan pelumasan berkala', '../uploads/Beretta M9.jpg'),
 ('Senapan Serbu XYZ-100', 'SG-001', 'Beretta', 'XYZ-100A', 'Senapan Serbu', '5.56x45mm', '30 peluru', '16 inci', 'Baja Karbon Tinggi', '3.5 kg', '850 meter/detik', '2021-09-10', 'Markas Besar Angkatan Darat', 'Aktif', '2022-09-15', ' Perbaikan Keamanan - Pembaruan Sistem Proteksi', '../uploads/Senapan Serbu XYZ-100.jpg'),
 ('Senapan Serbu Standar', 'SS-001', 'Fabrique Nationale (FN)', 'FAL 50.63', 'Senapan Serbu', '7.62x51mm', '20 peluru', '21 inci', 'Baja Tahan Karat, Kayu untuk Bagian Stok', '4.1 kg', '840 meter/detik', '2017-05-26', 'Markas Besar Angkatan Laut', 'Aktif', '2022-08-23', 'Penggantian suku cadang sistem transmisi', '../uploads/FAL 50.63.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_user`
+--
+
+CREATE TABLE `tb_user` (
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `tb_user`
+--
+
+INSERT INTO `tb_user` (`username`, `password`, `role`) VALUES
+('adminAU', 'amancantik', 'admin'),
+('user01', 'user1234', 'user'),
+('user02', 'user1234', 'user'),
+('user03', 'user1234', 'user'),
+('adminAD', 'amancantik', 'admin'),
+('adminAL', 'amancantik', 'admin');
 
 --
 -- Indexes for dumped tables
