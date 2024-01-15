@@ -77,7 +77,7 @@
         // kondisi jika sukses menambahkan data
         if ($conn->query($sql) === TRUE) {
             $conn->close();
-            echo "<script>alert('Data deleted successful'); window.location.href='../aset/aset.php';</script>";
+            echo "<script>alert('Data added successful'); window.location.href='../aset/aset.php';</script>";
         exit();
         } 
         // kondisi jika gagal menambahkan data

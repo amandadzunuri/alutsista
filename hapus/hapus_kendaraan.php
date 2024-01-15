@@ -11,7 +11,7 @@ if (isset($_GET['kode'])) {
     // Execute the query
     if ($conn->query($query) === TRUE) {
         $conn->close();
-        echo "<script>alert('Added data successful'); window.location.href='../aset/aset.php';</script>";
+        echo "<script>alert('Data deleted successful'); window.location.href='../aset/aset.php';</script>";
     } else {
         $conn->close();
         header("location: ../aset/aset.php");
