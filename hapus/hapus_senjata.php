@@ -6,12 +6,12 @@ if (isset($_GET['kode'])) {
     $kode = $_GET['kode'];
 
     // Delete the record from the 'senjata' table based on the 'kode' column
-    $query = "DELETE FROM senjata WHERE kode = '$kode'";
+    $query = "DELETE FROM tb_senjata WHERE kode = '$kode'";
     
     // Execute the query
     if ($conn->query($query) === TRUE) {
         $conn->close();
-        header("location: ../aset/aset.php");
+        echo "<script>alert('Data deleted successful'); window.location.href='../aset/aset.php';</script>";
     } else {
         $conn->close();
         header("location: ../aset/aset.php");

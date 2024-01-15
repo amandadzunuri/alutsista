@@ -71,13 +71,13 @@
         }
 
         // query tambah data kendaraan
-        $sql = "INSERT INTO senjata (nama, kode, merk, model, jenis, kaliber, kapasitas, panjang, bahan, bobot, kecepatan, tanggal_pembelian, lokasi, status, tanggal_perbaikan, jenis_perbaikan, gambar) 
+        $sql = "INSERT INTO tb_senjata (nama, kode, merk, model, jenis, kaliber, kapasitas, panjang, bahan, bobot, kecepatan, tanggal_pembelian, lokasi, status, tanggal_perbaikan, jenis_perbaikan, gambar) 
         VALUES ('$nama_alutsista', '$kode_identitas', '$merk', '$model', '$jenis_senjata', '$ukuran_kaliber', '$kapasitas_megazen', '$panjang_laras', '$bahan_konstruksi', '$bobot_senjata', '$kecepatan_peluru', '$tanggal_pembelian', '$lokasi_saat_ini', '$status_alutsista', '$tanggal_perbaikan', '$jenis_perbaikan', '$target_file')";
 
         // kondisi jika sukses menambahkan data
         if ($conn->query($sql) === TRUE) {
             $conn->close();
-            header("location: ../aset/aset.php");
+            echo "<script>alert('Data deleted successful'); window.location.href='../aset/aset.php';</script>";
         exit();
         } 
         // kondisi jika gagal menambahkan data

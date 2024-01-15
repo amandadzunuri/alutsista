@@ -66,7 +66,7 @@
         }
 
         // query tambah data kendaraan
-        $sql = "INSERT INTO kendaraan (nama, kode, merk, model, jenis, berat, ukuran, awak, senjata_utama, kecepatan, sistem_navigasi, tanggal_pembelian, lokasi, status, tanggal_perbaikan, jenis_perbaikan, gambar) 
+        $sql = "INSERT INTO tb_kendaraan (nama, kode, merk, model, jenis, berat, ukuran, awak, senjata_utama, kecepatan, sistem_navigasi, tanggal_pembelian, lokasi, status, tanggal_perbaikan, jenis_perbaikan, gambar) 
         VALUES ('$nama_alutsista', '$kode_identitas', '$merk', '$model', '$jenis_kendaraan', '$berat_tempur', '$ukuran_kendaraan', '$kapasitas_awak', '$persenjataan_utama', '$kecepatan_maksimal', '$sistem_navigasi', '$tanggal_pembelian', '$lokasi_saat_ini', '$status_alutsista', '$tanggal_perbaikan', '$jenis_perbaikan', '$target_file')";
 
         // kondisi jika sukses menambahkan data

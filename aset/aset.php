@@ -16,11 +16,11 @@ if(isset($_GET['search'])){
 }
 
 // Query for Kendaraan
-$qkendaraan = "SELECT * FROM kendaraan" . $where_condition;
+$qkendaraan = "SELECT * FROM tb_kendaraan" . $where_condition;
 $data_kendaraan = $conn->query($qkendaraan);
 
 // Query for Senjata
-$qsenjata = "SELECT * FROM senjata" . $where_condition;
+$qsenjata = "SELECT * FROM tb_senjata" . $where_condition;
 $data_senjata = $conn->query($qsenjata);
 ?>
 
@@ -72,6 +72,9 @@ $data_senjata = $conn->query($qsenjata);
                     echo '
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="../tambah/jenis_alutsista.html" style="padding-right: 71px;">Tambah Alutsista</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../login/login.html" style="padding-right: 71px;">Logout</a>
                     </li>';
                 } else {
                     echo '

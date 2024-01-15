@@ -5,6 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <style>
+    .center-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .center-content {
+      text-align: center;
+    }
+  </style>
+
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
@@ -42,6 +54,9 @@
                 if(isset($_SESSION['username'])){
                     echo '<li class="nav-item">
                             <a class="nav-link active" aria-current="page" href="./tambah/jenis_alutsista.html" style="padding-right: 71px;">Tambah Alutsista</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./login/login.html" style="padding-right: 71px;">Logout</a>
                           </li>';
                 } else {
                     echo '<li class="nav-item">
@@ -62,12 +77,16 @@
    
   <body >
     <section>
-      <div class="">
-        <img src="img/Group 78.svg" class="img-fluid p-4" alt="...">
-      </div>
+      
+    
+    <div class="center-container">
+    <div class="center-content">
+      <img src="img/Group 78.svg" class="img-fluid p-4" alt="...">
+    </div>
+  </div>
       
 
-      <p class="fw-bold fs-3 ps-4 mt-4">Alutsista Terbaru</p>
+      <p class="fw-bold fs-3 ps-4 mt-2">Alutsista Terbaru</p>
       <div class="row ps-4 pe-4">
         <div class="col">
           <div class="card h-100">

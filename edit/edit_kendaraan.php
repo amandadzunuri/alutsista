@@ -6,7 +6,7 @@ if (isset($_GET['kode'])) {
     $kode = $_GET['kode'];
 
     // Fetch the details from the database based on the kode using a prepared statement
-    $qselect_kendaraan = "SELECT * FROM kendaraan WHERE kode = ?";
+    $qselect_kendaraan = "SELECT * FROM tb_kendaraan WHERE kode = ?";
     $stmt = $conn->prepare($qselect_kendaraan);
     $stmt->bind_param('s', $kode);  // 's' indicates a string, adjust accordingly if it's an integer or other type
     $stmt->execute();

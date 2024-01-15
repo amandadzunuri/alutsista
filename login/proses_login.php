@@ -7,7 +7,7 @@ $username = $_POST['username'];
 $password = $_POST['password'];
 
 // Melakukan query ke database
-$query = "SELECT * FROM admin WHERE username='$username' AND password='$password'";
+$query = "SELECT * FROM tb_admin WHERE username='$username' AND password='$password'";
 $result = $conn->query($query);
 
 // Memeriksa hasil query

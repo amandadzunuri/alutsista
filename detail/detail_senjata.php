@@ -6,7 +6,7 @@ if (isset($_GET['kode'])) {
     $kode = $_GET['kode'];
 
     // Fetch the details from the database based on the kode
-    $query = "SELECT * FROM senjata WHERE kode = '$kode'";
+    $query = "SELECT * FROM tb_senjata WHERE kode = '$kode'";
     $result = $conn->query($query);
 
     if ($result->num_rows > 0) {

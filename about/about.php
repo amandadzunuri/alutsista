@@ -42,6 +42,9 @@
                   echo '
                   <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="../tambah/jenis_alutsista.html" style="padding-right: 71px;">Tambah Alutsista</a>
+                  </li> 
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="../login/login.html" style="padding-right: 71px;">Logout</a>
                   </li>';
                 } else {
                   echo '

@@ -64,7 +64,7 @@
         }
 
         //perintah mySQL untuk update data
-        $sql = "UPDATE kendaraan SET 
+        $sql = "UPDATE tb_kendaraan SET 
         nama = '$nama_alutsista',
         kode = '$kode_identitas',
         merk = '$merk',
