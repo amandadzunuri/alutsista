@@ -60,6 +60,6 @@ if($cek > 0){
 		header("location:../home/home.php"); 
 	}	
 } else{
-	header("location:../home/index.php");
+	header("location:../home/home.php");
 }
 ?>
