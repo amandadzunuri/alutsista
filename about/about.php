@@ -18,7 +18,7 @@
   <body style="background-color: #FFFAE2;  font-family: 'Poppins'">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #001524;">
         <div class="container-fluid">
-            <a class="navbar-brand" href="../index.php" style="padding: 12px;"><img src="../img/logo.png" alt="" width="50"
+            <a class="navbar-brand" href="../home/home.php" style="padding: 12px;"><img src="../img/logo.png" alt="" width="50"
                     height="50"></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,7 +27,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="../index.php" style="padding-right: 71px;">Home</a>
+                  <a class="nav-link active" aria-current="page" href="../home/home.php" style="padding-right: 71px;">Home</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="about.php" style="padding-right: 71px;">About Us</a>
@@ -35,24 +35,31 @@
                 <li class="nav-item">
                   <a class="nav-link active" aria-current="page" href="../aset/aset.php" style="padding-right: 71px;">Aset</a>
                 </li>
-                <?php
+
+
+              <?php
                 // Periksa apakah pengguna sudah login
                 session_start();
-                if(isset($_SESSION['username'])){
-                  echo '
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../tambah/jenis_alutsista.html" style="padding-right: 71px;">Tambah Alutsista</a>
-                  </li> 
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../login/login.html" style="padding-right: 71px;">Logout</a>
-                  </li>';
-                } else {
-                  echo '
-                  <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="../login/login.html" style="padding-right: 71px;">Login</a>
-                  </li>';
+                if(isset($_SESSION['username'])) {
+                  if($_SESSION['role'] == "admin") {
+                    echo '<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../tambah/jenis_alutsista.html" style="padding-right: 71px;">Tambah Alutsista</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../login/logout.php" style="padding-right: 71px;">Logout</a>
+                          </li>';
+                } elseif($_SESSION['role'] == "user") {
+                  echo '<li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="../login/logout.php" style="padding-right: 71px;">Logout</a>
+                        </li>';
                 }
-                ?>
+                } else {
+                    echo '<li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.php" style="padding-right: 71px;">Login</a>
+                          </li>';
+                
+                }
+              ?>
               </ul>
               <!--
               <form class="d-flex">

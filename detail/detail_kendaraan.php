@@ -48,10 +48,23 @@ if (isset($_GET['kode'])) {
             <h3 style="font-weight: bold;"><?php echo $detail['nama']; ?></h3>
               <p style="margin-top: 1rem;"><?php echo $detail['kode']; ?></p>
               <p style="margin-top: 1rem;"><?php echo $detail['model']; ?></p>
-              <div class="d-grid gap-4 d-md-block">
-                <a href="../edit/edit_kendaraan.php?kode=<?php echo $detail['kode']; ?>" class="btn btn-primary" style="border-radius: 0.3125rem; background: #1F9B00; width: 12.5rem;">Edit Data</a>
-                <a href="../hapus/hapus_kendaraan.php?kode=<?php echo $detail['kode']; ?>" class="btn btn-primary" style="border-radius: 0.3125rem; background: #EF0000; width: 12.5rem;">Hapus Data</a>
-              </div>
+
+              <?php
+                  // Periksa apakah pengguna sudah login
+                  session_start();
+                  
+                  if(isset($_SESSION['username'])) {
+                    if($_SESSION['role'] == "admin") {
+                      echo '<div class="d-grid gap-4 d-md-block">
+                              <a href="../edit/edit_kendaraan.php?kode=' . $detail['kode'] . '" class="btn btn-primary" style="border-radius: 0.3125rem; background: #1F9B00; width: 12.5rem;">Edit Data</a>
+                              <a href="../hapus/hapus_kendaraan.php?kode=' . $detail['kode'] . '" class="btn btn-primary" style="border-radius: 0.3125rem; background: #EF0000; width: 12.5rem;">Hapus Data</a>
+                            </div>';
+                  } elseif($_SESSION['role'] == "user") {
+                    echo '';
+                  }
+                }
+              ?>
+              
             </div>
           </div>
   
