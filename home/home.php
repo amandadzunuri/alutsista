@@ -1,3 +1,14 @@
+<?php
+include("../php/config.php");
+
+$qkalutsista = "SELECT * FROM tb_kendaraan ORDER BY tanggal_pembelian DESC LIMIT 3";
+$data_kalutsista = $conn->query($qkalutsista);
+
+$qsalutsista = "SELECT * FROM tb_senjata ORDER BY tanggal_pembelian DESC LIMIT 3";
+$data_salutsista = $conn->query($qsalutsista);
+?>
+
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -72,58 +83,58 @@
                 }
               ?>
             </ul>
-            <!--
-            <form class="d-flex" method="GET" action="../php/search_results.php">
-                <input class="form-control me-2" type="search" name="query" placeholder="Search" aria-label="Search"
-                    style="border-radius: 30px; background: none; border-color: #FFFAE2; color: #FFFAE2;">
-                <button class="btn btn-outline-light" type="submit" name="query">Search</button>
-            </form>-->
         </div>
       </div>
   </nav>
    
   <body >
     <section>
-      
-    
     <div class="center-container">
     <div class="center-content">
-      <img src="../img/Group 78.svg" class="img-fluid p-4" alt="...">
+      <img src="../img/Group 78.svg" class=" p-4 w-100" alt="..." >
     </div>
   </div>
-      
-
-      <p class="fw-bold fs-3 ps-4 mt-2">Alutsista Terbaru</p>
-      <div class="row ps-4 pe-4">
-        <div class="col">
-          <div class="card h-100">
-            <img src="../img/Group 38.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Tank Tempur Main Battle </h5>
-            </div>
+    <p class="fw-bold fs-3 ps-4 ms-4 mt-2">Alutsista Terbaru</p>
+      <div class="row ps-4 ms-4 pe-4 me-4">
+      <?php
+        foreach($data_kalutsista as $index => $value){
+      ?>
+      <div class="col">
+        <a href="../detail/detail_kendaraan.php?kode=<?php echo $value['kode']; ?>" class="text-decoration-none text-dark">
+          <img src="<?php echo $value['gambar']; ?>" class="card-img-top w-100" alt="..." style="height: 13.9375rem; border-radius: 0.9375rem;">
+          <div class="mt-4">
+            <h5 class="card-text fw-bold"><?php echo $value['nama']; ?></h5>
+            <p class="card-text"><?php echo $value['model']; ?></p>
           </div>
-        </div>
-        <div class="col">
-          <div class="card h-100">
-            <img src="../img/Group 39.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Pistol Seri XZ-2000</h5>
-            </div>
-          </div>
-        </div>
-        <div class="col ">
-          <div class="card h-100">
-            <img src="../img/Group 63.svg" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Pistol Serbu FN SCAR</h5>
-            </div>
-          </div>
-        </div>
+        </a>
+      </div>
+      <?php
+      }
+      ?>
       </div>
 
+      <div class="row ps-4 pe-4 mt-4 ps-4 ms-4 me-4">
+      <?php
+        foreach($data_salutsista as $index => $value){
+      ?>
+      <div class="col">
+        <a href="../detail/detail_senjata.php?kode=<?php echo $value['kode']; ?>" class="text-decoration-none text-dark">
+          <img src="<?php echo $value['gambar']; ?>" class="card-img-top w-100" alt="..." style="height: 13.9375rem; border-radius: 0.9375rem;">
+          <div class="mt-4">
+            <h5 class="card-text fw-bold"><?php echo $value['nama']; ?></h5>
+            <p class="card-text"><?php echo $value['model']; ?></p>
+          </div>
+        </a>
+      </div>
+      <?php
+      }
+      ?>
+      </div>
+
+
     <section>
-      <p class="fw-bold fs-3 ps-4 mt-4">Tentang Alutsista Kami</p>
-      <div class="row ps-4 pe-4">
+      <p class="fw-bold fs-3 ps-4 mt-4 ms-4 me-4">Tentang Alutsista Kami</p>
+      <div class="row ps-4 pe-4 ms-4 me4">
         <div class="col">
           <div class="card h-100">
             <img src="../img/Group 40.svg" class="card-img-top" alt="...">

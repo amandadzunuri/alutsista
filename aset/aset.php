@@ -1,9 +1,5 @@
 <?php
 include("../php/config.php");
-//$qkendaraan = "select * from kendaraan";
-//$data_kendaraan = $conn->query($qkendaraan);
-//$qsenjata = "select * from senjata";
-//$data_senjata = $conn->query($qsenjata);
 
 // Initialize variables for search
 $search_query = "";
